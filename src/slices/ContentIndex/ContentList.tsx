@@ -10,10 +10,10 @@ import { Content } from "@prismicio/client";
 gsap.registerPlugin(ScrollTrigger);
 
 type ContentListProps = {
-  items: Content.BlogPostDocument[] | Content.ProjectDocument[];
-  contentType: Content.BlogPostIndexSlice["primary"]["content_type"];
-  fallbackItemImage: Content.BlogPostIndexSlice["primary"]["fallback_item_image"];
-  viewMoreText: Content.BlogPostIndexSlice["primary"]["view_more_text"];
+  items: Content.ContentPostDocument[] | Content.ProjectDocument[];
+  contentType: Content.ContentIndexSlice["primary"]["content_type"];
+  fallbackItemImage: Content.ContentIndexSlice["primary"]["fallback_item_image"];
+  viewMoreText: Content.ContentIndexSlice["primary"]["view_more_text"];
 };
 
 export default function ContentList({
@@ -30,7 +30,7 @@ export default function ContentList({
   const [hovering, setHovering] = useState(false);
   const lastMousePos = useRef({ x: 0, y: 0 });
 
-  const urlPrefix = contentType === "Blogs" ? "/blog" : "/project";
+  const urlPrefix = contentType === "Blog" ? "/blog" : "/project";
 
   useEffect(() => {
     // Animate list-items in with a stagger
@@ -112,8 +112,8 @@ export default function ContentList({
   };
 
   const contentImages = items.map((item) => {
-    const image = isFilled.image(item.data.image)
-      ? item.data.image
+    const image = isFilled.image(item.data.hover_image)
+      ? item.data.hover_image
       : fallbackItemImage;
     return asImageSrc(image, {
       fit: "crop",
