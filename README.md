@@ -1,3 +1,12 @@
+Tech Stack Used:
+- React Three Fiber (utilizing Three.js)
+- Drei (utilized for abstractions in React Three Fiber)
+- TypeScript
+- React
+- Tailwind CSS
+- GSAP (GreenSock Animation Platform)
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
