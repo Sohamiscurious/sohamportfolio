@@ -12,7 +12,7 @@ import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 export type BiographyProps = SliceComponentProps<Content.BiographySlice>;
 
 /**
- * Component for "Biography" Slices.
+ * Component for "Biography" Slices.ok
  */
 const Biography = ({ slice }: BiographyProps): JSX.Element => {
   return (
